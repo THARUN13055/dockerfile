@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  database:
+    image: postgres
+    ports:
+      - 5678:80
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres

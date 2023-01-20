@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    image: python:latest
+    ports:
+      - "80"
+    build: .
+    restart: always
+    expose:
+      - 0.0.0.0:80:80
+    volumes:
+      - python:/app .
+volumes:
+  python:
+    external: true
+      

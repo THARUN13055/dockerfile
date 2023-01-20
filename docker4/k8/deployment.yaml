@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python
+spec:
+  selector:
+    matchLabels:
+      app: my-python
+  template:
+    metadata:
+      labels:
+        app: my-python
+    spec:
+      containers:
+      - name: python-container
+        image: tharun13055/python:latest
+        ports:
+        - containerPort: 80
+containers:
+- python-container:
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-python
+spec:
+  selector:
+    app: my-python
+  ports:
+  - port: 80
+    targetPort: 80
+    protocal: TCP
+    
+
