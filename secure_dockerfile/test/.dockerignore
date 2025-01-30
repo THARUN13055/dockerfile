@@ -1,0 +1,51 @@
+# Exclude Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Exclude Git-related files
+.git/
+.gitignore
+.github/
+
+# Exclude build-related files
+dist/
+build/
+coverage/
+backup.Dockerfile
+
+
+# OS and editor-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Exclude temporary files
+*.tmp
+*.temp
+*.bak
+
+# Exclude unnecessary config files
+helm/
+helmfile.yaml
+
+# CI/CD configurations
+.github/
+
+# Miscellaneous files
+*.tar.gz
+*.zip
+*.tgz
+iii.txt
+
+# Include only the essential files
+!Dockerfile
+!nginx.conf
+!src/
+!public/
+!README.md
+!package.json
+!yarn.lock

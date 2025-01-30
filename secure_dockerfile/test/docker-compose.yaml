@@ -1,0 +1,40 @@
+# services:
+#   nginx:
+#     image: test:v8
+#     container_name: nginx-app
+#     ports:
+#       - "8081:5713"
+#     volumes:
+#       - type: bind
+#         source: ./logs
+#         target: /tmp/nginx
+#         bind:
+#           create_host_path: true
+#     restart: unless-stopped
+#     user: "1000:1000"
+
+
+# services:
+#   nginx:
+#     image: test:v8
+#     container_name: nginx-app
+#     ports:
+#       - "8081:5713"
+#     volumes:
+#       - ./logs:/tmp/nginx
+#     restart: unless-stopped
+
+
+services:
+  nginx:
+    image: test:v8
+    container_name: nginx-app
+    ports:
+      - "8081:5713"
+    volumes: 
+      - ./logs:/tmp/nginx
+    restart: unless-stopped
+
+volumes:
+  nginx_logs:
+    name: nginx_logs
